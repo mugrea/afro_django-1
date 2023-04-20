@@ -1,0 +1,25 @@
+
+{% block content%}
+{% load static %}
+
+    <h1 text-align="center">Django Templating Test</h1>
+    <link rel="stylesheet" href="{% static 'css/test.css' %}">
+   <fieldset>
+    <legend><strong>NATIONAL ID CARD DETAILS</strong>   </legend>
+    <form action="{% url 'testme' %}" id="test_form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="hyrid">
+            
+            <br>
+            <input placeholder="National Indentification Number" name="NIN" type="text"
+            required>
+            <input placeholder="Voting Village" name="village" type="text" required>
+            
+        </fieldset>
+            <br>
+            
+            <input type="submit" class="button1" title="Submit form" id="signupbtn"> 
+            
+        </div>
+    </form>
+{% endblock %}

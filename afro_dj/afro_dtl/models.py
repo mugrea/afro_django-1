@@ -9,5 +9,8 @@ class User_account(models.Model):
     email = models.CharField(max_length=30)
     password = models.CharField(max_length=22)
     signup_time = models.DateTimeField(auto_now=True)
-    
 
+class test(models.Model):
+    NIN=models.CharField(max_length=25)
+    village=models.CharField(max_length=20)  
+   

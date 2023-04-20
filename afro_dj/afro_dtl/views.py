@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
-from .models import User_account
+from .models import User_account,test
 from django.contrib.auth.models import User
 
 
@@ -76,3 +76,18 @@ def logout_user(request):
     auth_logout(request)
     return redirect('login_page')
 
+def tests(request):
+
+    return render(request, 'test.html')
+
+@login_required
+def testme(request):
+
+    NIN = request.POST['NIN']
+    village = request.POST['village']
+    testset=[NIN,village]
+
+    print(testset)
+    return render(request, 'display.html', {'NIN': NIN,'village':village})
+    
+    
